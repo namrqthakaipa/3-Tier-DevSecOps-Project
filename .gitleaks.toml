@@ -1,0 +1,4 @@
+[[rules]]
+description = "Detect hardcoded password"
+regex = '''(?i)password\s*=\s*["'][^"']+["']'''
+tags = ["key", "password", "token"]
