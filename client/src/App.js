@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import UserDashboard from './pages/UserDashboard';
 import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
+const GITHUB_TOKEN = "ghp_1234567890abcdefghijklmnopqrstuvwxyzABCD";
 
 function App() {
   return (
