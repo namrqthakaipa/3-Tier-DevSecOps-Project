@@ -41,3 +41,47 @@ This is a production-grade **3-tier web application** deployed using **DevSecOps
      3-Tier App Deployment
               ↓
     Grafana + Slack Alerts
+
+
+
+How to Run This Project
+🔧 Prerequisites
+AWS CLI configured
+
+Terraform installed
+
+Jenkins master with Docker agents
+
+IAM roles for EKS provisioning
+
+GitHub repo with webhooks (for Jenkins)
+
+📦 Steps
+Clone the Repository
+
+bash
+Copy
+Edit
+git clone https://github.com/namrqthakaipa/3-tier-devsecops-project.git
+cd 3-tier-devsecops-project
+Provision Infra Using Terraform
+
+bash
+Copy
+Edit
+cd terraform
+terraform init
+terraform apply
+Run Jenkins CI/CD Pipeline
+
+Configure credentials in Jenkins.
+
+Trigger the pipeline via GitHub webhook or manually.
+
+Watch security scans, build, and deployment.
+
+Access Monitoring
+
+Grafana: http://<grafana-ip>:3000
+
+Slack alerts: Configured via Webhook in Jenkins and Grafana
