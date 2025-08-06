@@ -21,9 +21,10 @@ This is a production-grade **3-tier web application** deployed using **DevSecOps
 
 ---
 
+---
+
 ## 🧩 Project Architecture
 
-```bash
       GitHub Repository
               ↓
           Jenkins CI
@@ -44,44 +45,48 @@ This is a production-grade **3-tier web application** deployed using **DevSecOps
 
 
 
-How to Run This Project
-🔧 Prerequisites
-AWS CLI configured
+---
 
-Terraform installed
+## 🔐 Security Integration
 
-Jenkins master with Docker agents
+This project incorporates essential security scanning tools as part of the CI/CD lifecycle:
 
-IAM roles for EKS provisioning
+- **Gitleaks**: Scans codebase for hardcoded secrets and credentials.
+- **Trivy**: Scans Docker images for OS and application vulnerabilities.
+- **SonarQube**: Performs static code analysis to detect code smells, bugs, and security hotspots.
 
-GitHub repo with webhooks (for Jenkins)
+---
 
-📦 Steps
-Clone the Repository
+## 🔁 CI/CD Pipeline Flow
 
-bash
-Copy
-Edit
+The Jenkins pipeline (saved as `Jenkins-pipeline`) automates:
+
+1. Clone and scan source code from GitHub.
+2. Run static analysis (SonarQube) and secret detection (Gitleaks).
+3. Build Docker image and push to Docker Hub.
+4. Provision infrastructure using Terraform.
+5. Deploy the 3-tier app to an EKS cluster.
+6. Monitor the system using Grafana dashboards.
+7. Send alerts to Slack for failures and warnings.
+
+---
+
+## 🧪 How to Run This Project
+
+### 🔧 Prerequisites
+
+- AWS CLI configured with valid credentials
+- Terraform installed and in system path
+- Jenkins master with Docker agents set up
+- IAM roles for EKS provisioning via Terraform
+- GitHub repository configured with webhook (to trigger Jenkins job)
+
+---
+
+### 📦 Steps to Deploy
+
+#### 1. Clone the Repository
+
 git clone https://github.com/namrqthakaipa/3-tier-devsecops-project.git
 cd 3-tier-devsecops-project
-Provision Infra Using Terraform
 
-bash
-Copy
-Edit
-cd terraform
-terraform init
-terraform apply
-Run Jenkins CI/CD Pipeline
-
-Configure credentials in Jenkins.
-
-Trigger the pipeline via GitHub webhook or manually.
-
-Watch security scans, build, and deployment.
-
-Access Monitoring
-
-Grafana: http://<grafana-ip>:3000
-
-Slack alerts: Configured via Webhook in Jenkins and Grafana
