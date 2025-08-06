@@ -1,31 +1,43 @@
-# 3-Tier DevSecOps Project
+# 🚀 3-Tier DevSecOps Project
 
-This repository contains a simple Node.js API and a React client used for a user management demo. Follow the steps below to get the project running locally.
+This is a production-grade **3-tier web application** deployed using **DevSecOps best practices**, integrating CI/CD pipelines, Infrastructure as Code, container orchestration, and automated security checks. The project is built to run across **Dev, QA, and Prod** environments with real-time monitoring and alerting.
 
-## Setup
+---
 
-1. Install Node.js (version 18 or later is recommended).
-2. Install dependencies for both the API and client:
+## 🛠️ Tech Stack & Tools
 
-   ```bash
-   cd api && npm install
-   cd ../client && npm install
-   ```
+<p align="left">
+  <img src="https://img.shields.io/badge/Jenkins-%232C5263.svg?logo=jenkins&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kubernetes-%23326CE5.svg?logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/Terraform-%235835CC.svg?logo=terraform&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-EKS-orange?logo=amazonaws&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-%230db7ed.svg?logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/SonarQube-%2300B0FF.svg?logo=sonarqube&logoColor=white" />
+  <img src="https://img.shields.io/badge/Trivy-%23C12127.svg?logo=trivy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gitleaks-%23323A3F.svg?logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/Grafana-%23F46800.svg?logo=grafana&logoColor=white" />
+  <img src="https://img.shields.io/badge/Slack-%234A154B.svg?logo=slack&logoColor=white" />
+</p>
 
-3. Start the API server:
+---
 
-   ```bash
-   cd api
-   npm start
-   ```
+## 🧩 Project Architecture
 
-4. In a separate terminal, start the React client:
-
-   ```bash
-   cd client
-   npm start
-   ```
-
-5. Open `http://localhost:3000` in your browser to use the application.
-
-The client now displays an animated banner welcoming you to **DevOps Shack**.
+```bash
+      GitHub Repository
+              ↓
+          Jenkins CI
+              ↓
+ ┌────────────────────────┐
+ │  Security Scanning     │
+ │  (Gitleaks, Trivy,     │
+ │   SonarQube)           │
+ └────────────────────────┘
+              ↓
+     Terraform Provisioning
+              ↓
+        AWS EKS Cluster
+              ↓
+     3-Tier App Deployment
+              ↓
+    Grafana + Slack Alerts
