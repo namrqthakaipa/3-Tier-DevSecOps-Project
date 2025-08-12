@@ -63,7 +63,7 @@ eksctl version
 ```bash
 eksctl utils associate-iam-oidc-provider \
   --region ap-south-1 \
-  --cluster devopsshack-cluster \
+  --cluster Namratha-cluster \
   --approve
 ```
 
@@ -74,7 +74,7 @@ eksctl create iamserviceaccount \
   --region ap-south-1 \
   --name ebs-csi-controller-sa \
   --namespace kube-system \
-  --cluster devopsshack-cluster \
+  --cluster Namratha-cluster \
   --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
   --approve \
   --override-existing-serviceaccounts
